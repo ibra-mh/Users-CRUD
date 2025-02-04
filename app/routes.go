@@ -21,5 +21,5 @@ func Routes(db *sql.DB) {
 	router.HandleFunc("/users/{id}", controller.UpdateUser(db)).Methods("PUT")
 	router.HandleFunc("/users/{id}", controller.DeleteUser(db)).Methods("DELETE")
 
-	log.Fatal(http.ListenAndServe(":8000", utils.JsonContentTypeMiddleware(router)))
+	log.Fatal(http.ListenAndServe(":8001", utils.JsonContentTypeMiddleware(router)))
 }
